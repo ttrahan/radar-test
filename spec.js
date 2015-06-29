@@ -1,5 +1,5 @@
 var BASE_URL = 'http://localhost:3000';
-var API_TOKEN = 'ed8cd7c02e2dce9a04262e9da14a4ad11a7c3441';
+var API_TOKEN = 'put token here';
 
 describe('Github Radar App', function() {
   var tokenForm = element(by.model('accessToken'));
