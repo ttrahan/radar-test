@@ -10,6 +10,9 @@ describe('Github Radar App', function() {
   var openPanel = element(by.id('openPanel'));
   var closePanel = element(by.id('closePanel'));
   var backButtons = element.all(by.id('Back'));
+  var backButton = backButtons.filter(function(elem) {
+    return elem.isDisplayed(); 
+  });
   beforeEach(function() {
     browser.get(BASE_URL);
   });
@@ -32,9 +35,6 @@ describe('Github Radar App', function() {
   });
 
   it('should render open issues and go back', function() {
-    var backButton = backButtons.filter(function(elem) {
-      return elem.isDisplayed(); 
-    });
     tokenForm.sendKeys(API_TOKEN);
     openButton.click();
     expect(openPanel.getText())
@@ -45,9 +45,6 @@ describe('Github Radar App', function() {
   });
 
   it('should render closed issues and go back', function() {
-    var backButton = backButtons.filter(function(elem) {
-      return elem.isDisplayed(); 
-    });
     tokenForm.sendKeys(API_TOKEN);
     closeButton.click();
     expect(closePanel.getText())
