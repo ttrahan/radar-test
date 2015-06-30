@@ -1,7 +1,7 @@
 var BASE_URL = 'http://localhost:3000';
 var API_TOKEN = 'put token here';
 
-describe('Github Radar App', function() {
+describe('GitHub Radar App', function() {
   var tokenForm = element(by.model('accessToken'));
   var openButton = element(by.id('openButton'));
   var closeButton = element(by.id('closeButton'));
@@ -41,7 +41,7 @@ describe('Github Radar App', function() {
       .toContain('Open issues');
     backButton.click();
     expect(mainPanel.getText())
-      .toContain('Github Issue Radar');
+      .toContain('GitHub Issue Radar');
   });
 
   it('should render closed issues and go back', function() {
@@ -51,6 +51,6 @@ describe('Github Radar App', function() {
       .toContain('Closed issues');
     backButton.click();
     expect(mainPanel.getText())
-      .toContain('Github Issue Radar');
+      .toContain('GitHub Issue Radar');
   });
 });
